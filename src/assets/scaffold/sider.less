@@ -1,0 +1,60 @@
+.ant-layout-sider {
+  background: #f8fafc;
+
+  // icon
+  .zt {
+    &-tckh,
+    &-cyzx,
+    &-xzf {
+      margin-right: 8px;
+    }
+  }
+  .zt-tckh {
+    font-size: 14px;
+  }
+  .zt-cyzx {
+    font-size: 13px;
+  }
+
+  // 全局样式
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: rgba(30, 112, 241, 0.05);
+  }
+  .ant-menu-inline {
+    border: none;
+    background: none;
+    margin-top: 0;
+  }
+  .ant-menu-inline .ant-menu-item {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 42px;
+  }
+  .ant-menu-sub {
+    .ant-menu-item {
+      padding-left: 62px !important;
+    }
+  }
+  .ant-menu-inline .ant-menu-item:not(:last-child) {
+    margin: 0;
+  }
+  .ant-menu-item:after {
+    border-right: none;
+    border-left: 4px solid #108ee9;
+    right: initial;
+    left: 0;
+  }
+  .ant-menu-inline > .ant-menu-item {
+    height: 50px;
+    line-height: 50px;
+  }
+  .ant-menu-item > a {
+    color: rgba(0, 0, 0, 0.45);
+  }
+  .ant-menu-submenu-title {
+    color: rgba(0, 0, 0, 0.45);
+  }
+  .ant-menu-item-selected > a {
+    color: #108ee9;
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "antdvue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "vue-cli-service serve --fix",
+    "build": "yarn lint && vue-cli-service build",
+    "lint": "vue-cli-service lint --mode production",
+    "commit": "git-cz"
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.2.4",
+    "axios": "^0.18.0",
+    "bignumber.js": "^8.1.1",
+    "copy-to-clipboard": "^3.0.8",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "nzh": "^1.0.4",
+    "qs": "^6.7.0",
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.8.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.1.0",
+    "lint-staged": "^8.1.4",
+    "stylelint": "^9.10.1",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "vue-template-compiler": "^2.6.9"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "prettier --write",
+      "vue-cli-service lint --mode production",
+      "git add"
+    ]
+  }
+}

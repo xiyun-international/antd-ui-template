@@ -1,0 +1,47 @@
+@import 'utlis';
+
+#root {
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
+  font-size: 12px;
+
+  .ant-layout {
+    background: white;
+    // 如果用了CSS预处理器（less,scss）会被它们先解析，这是需要禁用解析 calc(~ '100vh - 120px') (less的写法）
+    min-height: calc(~ '100vh - 120px');
+  }
+
+  .t-DIS {
+    color: rgba(0, 0, 0, 0.25);
+    cursor: auto;
+  }
+
+  .paginationGrid {
+    margin-left: 11px;
+    margin-right: 11px;
+  }
+
+  // 布局
+  @import 'scaffold/header';
+  @import 'scaffold/sider';
+  @import 'scaffold/context';
+  @import 'scaffold/footer';
+
+  // 表格
+  @import 'scaffold/table';
+  @import 'scaffold/pagination';
+
+  // 工具
+  @import 'utlis';
+
+  // 业务全局样式
+  @import 'business/search';
+  @import 'business/list';
+  @import 'business/form';
+}
+@import 'scaffold/button';
+@import 'scaffold/modal';
+@import 'scaffold/form';
+@import 'scaffold/alert';
+@import 'scaffold/tooltip';
