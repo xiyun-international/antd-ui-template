@@ -1,10 +1,10 @@
 <template>
   <a-layout class="layout">
-    <a-layout-header>
+    <a-layout-header v-if="!isSimpleLayout">
       <xy-header />
     </a-layout-header>
     <a-layout>
-      <a-layout-sider width="230">
+      <a-layout-sider width="230" v-if="!isSimpleLayout">
         <xy-menu />
       </a-layout-sider>
       <a-layout>
@@ -13,7 +13,7 @@
         </a-layout-content>
       </a-layout>
     </a-layout>
-    <a-layout-footer>
+    <a-layout-footer v-if="!isSimpleLayout">
       <xy-footer />
     </a-layout-footer>
   </a-layout>
@@ -30,6 +30,16 @@ export default {
     XyHeader,
     XyFooter,
     XyMenu,
+  },
+  data() {
+    return {
+      mode: process.env.VUE_APP_MODE,
+    };
+  },
+  computed: {
+    isSimpleLayout() {
+      return this.mode === 'simple';
+    },
   },
 };
 </script>
