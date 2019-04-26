@@ -23,6 +23,7 @@
 import XyHeader from './part/header.vue';
 import XyMenu from './part/menu.vue';
 import XyFooter from './part/footer.vue';
+import { setToken } from '@/utils/token';
 
 export default {
   name: 'layout',
@@ -35,6 +36,12 @@ export default {
     return {
       mode: process.env.VUE_APP_MODE,
     };
+  },
+  created() {
+    if (this.isSimpleLayout) {
+      // 每次刷新页面或重新进入页面都设置，避免token失效
+      setToken(this.$route.query.token);
+    }
   },
   computed: {
     isSimpleLayout() {
