@@ -7,15 +7,23 @@ antd-ui-template是一个基于ant-design-vue组件库快速创建的xy框架模
 
 ### 使用
 
-```
+```shell
+
 启动项目
-yarn start
+$ yarn run start
+或
+$ npm run start
 
 打包项目
-yarn build
+$ yarn run build
+或
+$ npm run build
 
 代码格式检查
-npm run lint
+$ yarn run lint
+或
+$ npm run lint
+
 ```
 
 
@@ -23,7 +31,7 @@ npm run lint
 ### 项目目录结构
 
 ```
-
+├── dists             # 打包文件目录
 ├── node_modules      # 第三方依赖包
 ├── public            # 公共文件，主要存储样式，字体，图片等
 ├── src               # 项目源码
