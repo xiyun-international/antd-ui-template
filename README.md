@@ -8,14 +8,14 @@ antd-ui-template是一个基于ant-design-vue组件库快速创建的xy框架模
 ### 使用
 
 ```
-  启动项目
-  yarn start
+启动项目
+yarn start
 
-  打包项目
-  yarn build
+打包项目
+yarn build
 
-  代码格式检查
-  npm run lint
+代码格式检查
+npm run lint
 ```
 
 
