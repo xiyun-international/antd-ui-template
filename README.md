@@ -38,7 +38,7 @@ antd-ui-template是一个基于ant-design-vue组件库快速创建的xy框架模
 ```
 
 
-#### git commit message 规范
+### git commit message 规范
 
 本项目框架默认在执行 git commit 的时候调用了 hook 来检查提交消息的规范，
 意味着你在执行`git commit -am'feat: 增加新功能'`时，消息必须要写相应的前缀来标明这次提交的类型。
