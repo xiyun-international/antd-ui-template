@@ -20,10 +20,10 @@
 </template>
 
 <script>
+import { setToken } from '@xiyun/utils';
 import XyHeader from './part/header.vue';
 import XyMenu from './part/menu.vue';
 import XyFooter from './part/footer.vue';
-import { setToken } from '@/utils/token';
 
 export default {
   name: 'layout',

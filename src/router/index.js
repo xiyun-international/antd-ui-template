@@ -29,6 +29,7 @@ const router = new VueRouter({ routes });
 
 router.beforeEach((to, from, next) => {
   // 如果项目是简单 layout 时，那么需要向父页面发送 postMessage 来调整子页面 iframe 高度。
+  // 正常业务请把这段代码删除掉
   if (process.env.VUE_APP_MODE === 'simple') {
     const components = router.getMatchedComponents(to);
     if (components.length === 1) {

@@ -1,22 +1,15 @@
 {
   "name": "antdvue",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve --open --copy --fix",
     "build": "yarn lint && vue-cli-service build",
-    "lint": "vue-cli-service lint --mode production",
-    "commit": "git-cz"
+    "lint": "vue-cli-service lint --mode production"
   },
   "dependencies": {
+    "@xiyun/utils": "^1.1.7",
     "ant-design-vue": "^1.2.4",
-    "axios": "^0.18.1",
-    "bignumber.js": "^8.1.1",
-    "copy-to-clipboard": "^3.0.8",
-    "lodash": "^4.17.11",
-    "moment": "^2.24.0",
-    "nzh": "^1.0.4",
-    "qs": "^6.7.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -48,8 +41,7 @@
   "lint-staged": {
     "*.{js,vue}": [
       "prettier --write",
-      "vue-cli-service lint --mode production",
-      "git add"
+      "vue-cli-service lint --mode production"
     ]
   }
 }

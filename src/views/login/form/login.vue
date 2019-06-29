@@ -36,7 +36,7 @@
 
 <script>
 import { message } from 'ant-design-vue';
-import { setToken } from '@/utils/token';
+import { setToken } from '@xiyun/utils';
 import router from '@/router/index';
 
 export default {

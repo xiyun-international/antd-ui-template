@@ -1,98 +1,125 @@
 import Vue from 'vue';
 import {
+  Affix,
+  Anchor,
+  AutoComplete,
   Alert,
+  Avatar,
+  BackTop,
   Badge,
-  Button,
   Breadcrumb,
+  Button,
+  Calendar,
+  Card,
+  Collapse,
+  Carousel,
   Cascader,
   Checkbox,
   Col,
   DatePicker,
+  Divider,
   Dropdown,
   Form,
   Icon,
   Input,
   InputNumber,
   Layout,
+  List,
   LocaleProvider,
+  message,
   Menu,
   Modal,
+  notification,
   Pagination,
+  Popconfirm,
+  Popover,
+  Progress,
   Radio,
+  Rate,
   Row,
-  Spin,
   Select,
-  Switch,
+  Slider,
+  Spin,
   Steps,
+  Switch,
   Table,
+  Transfer,
+  Tree,
+  TreeSelect,
   Tabs,
   Tag,
   TimePicker,
+  Timeline,
   Tooltip,
+  // Mention,
   Upload,
-  message,
-  Card,
+  // version,
+  Drawer,
+  Skeleton,
+  Comment,
+  ConfigProvider,
 } from 'ant-design-vue';
 
-Pagination.props.showQuickJumper = {
-  type: Object,
-  default() {
-    return { goButton: <a-button class="ant-pagination-go-button">跳转</a-button> };
-  },
-};
+Vue.prototype.$message = message;
+Vue.prototype.$notification = notification;
+Vue.prototype.$info = Modal.info;
+Vue.prototype.$success = Modal.success;
+Vue.prototype.$error = Modal.error;
+Vue.prototype.$warning = Modal.warning;
+Vue.prototype.$confirm = Modal.confirm;
 
-Vue.component(Alert.name, Alert);
-Vue.component(Badge.name, Badge);
-Vue.component(Button.name, Button);
-Vue.component(Breadcrumb.name, Breadcrumb);
-Vue.component(Breadcrumb.Item.name, Breadcrumb.Item);
-Vue.component(Cascader.name, Cascader);
-Vue.component(Checkbox.name, Checkbox);
-Vue.component(Checkbox.Group.name, Checkbox.Group);
-Vue.component(Col.name, Col);
-Vue.component(DatePicker.name, DatePicker);
-Vue.component(Dropdown.name, Dropdown);
-Vue.component(Form.name, Form);
-Vue.component(Form.Item.name, Form.Item);
-Vue.component(Icon.name, Icon);
-Vue.component(Input.name, Input);
-Vue.component(Input.TextArea.name, Input.TextArea);
-Vue.component(Input.Group.name, Input.Group);
-Vue.component(Input.Search.name, Input.Search);
-Vue.component(InputNumber.name, InputNumber);
-Vue.component(Layout.name, Layout);
-Vue.component(Layout.Content.name, Layout.Content);
-Vue.component(Layout.Footer.name, Layout.Footer);
-Vue.component(Layout.Header.name, Layout.Header);
-Vue.component(Layout.Sider.name, Layout.Sider);
-Vue.component(LocaleProvider.name, LocaleProvider);
-Vue.component(Menu.name, Menu);
-Vue.component(Menu.Item.name, Menu.Item);
-Vue.component(Menu.ItemGroup.name, Menu.ItemGroup);
-Vue.component(Menu.SubMenu.name, Menu.SubMenu);
-Vue.component(Modal.name, Modal);
-Vue.component(Pagination.name, Pagination);
-Vue.component(Radio.name, Radio);
-Vue.component(Radio.Group.name, Radio.Group);
-Vue.component(Radio.Button.name, Radio.Button);
-Vue.component(Row.name, Row);
-Vue.component(Spin.name, Spin);
-Vue.component(Select.name, Select);
-Vue.component(Select.Option.name, Select.Option);
-Vue.component(Switch.name, Switch);
-Vue.component(Steps.name, Steps);
-Vue.component(Steps.Step.name, Steps.Step);
-Vue.component(Table.name, Table);
-Vue.component(Tabs.name, Tabs);
-Vue.component(Tabs.TabPane.name, Tabs.TabPane);
-Vue.component(Tag.name, Tag);
-Vue.component(TimePicker.name, TimePicker);
-Vue.component(Tooltip.name, Tooltip);
-Vue.component(Upload.name, Upload);
-Vue.component(Dropdown.name, Dropdown);
-Vue.component(Card.name, Card);
-Vue.component(DatePicker.MonthPicker.name, DatePicker.MonthPicker);
-
-message.config({
-  maxCount: 1,
-});
+/* v1.1.3+ registration methods */
+Vue.use(Affix);
+Vue.use(Anchor);
+Vue.use(AutoComplete);
+Vue.use(Alert);
+Vue.use(Avatar);
+Vue.use(BackTop);
+Vue.use(Badge);
+Vue.use(Breadcrumb);
+Vue.use(Button);
+Vue.use(Calendar);
+Vue.use(Card);
+Vue.use(Collapse);
+Vue.use(Carousel);
+Vue.use(Cascader);
+Vue.use(Checkbox);
+Vue.use(Col);
+Vue.use(DatePicker);
+Vue.use(Divider);
+Vue.use(Drawer);
+Vue.use(Dropdown);
+Vue.use(Form);
+Vue.use(Icon);
+Vue.use(Input);
+Vue.use(InputNumber);
+Vue.use(Layout);
+Vue.use(List);
+Vue.use(LocaleProvider);
+Vue.use(Menu);
+Vue.use(Modal);
+Vue.use(Pagination);
+Vue.use(Popconfirm);
+Vue.use(Popover);
+Vue.use(Progress);
+Vue.use(Radio);
+Vue.use(Rate);
+Vue.use(Row);
+Vue.use(Select);
+Vue.use(Slider);
+Vue.use(Spin);
+Vue.use(Steps);
+Vue.use(Switch);
+Vue.use(Table);
+Vue.use(Transfer);
+Vue.use(Tree);
+Vue.use(TreeSelect);
+Vue.use(Tabs);
+Vue.use(Tag);
+Vue.use(TimePicker);
+Vue.use(Timeline);
+Vue.use(Tooltip);
+Vue.use(Upload);
+Vue.use(Skeleton);
+Vue.use(Comment);
+Vue.use(ConfigProvider);
