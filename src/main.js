@@ -6,7 +6,7 @@ import './assets/global.less';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import {post, get} from './utils/http';
+import { post, get } from './utils/http';
 
 Vue.config.productionTip = false;
 
