@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import { message } from 'ant-design-vue';
 import './plugins/ant-design-vue';
 import './assets/global.less';
 
@@ -13,8 +12,6 @@ Vue.config.productionTip = false;
 // 设置 http 请求方法
 Vue.prototype.$post = post;
 Vue.prototype.$get = get;
-
-Vue.prototype.$message = message;
 
 new Vue({
   router,
