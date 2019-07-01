@@ -32,19 +32,22 @@ router.beforeEach((to, from, next) => {
   // 正常业务请把这段代码删除掉
   if (process.env.VUE_APP_MODE === 'simple') {
     const components = router.getMatchedComponents(to);
-    if (components.length === 1) {
-      if (!components[0].mixins) {
-        components[0].mixins = [];
+    components.forEach(parent => {
+      if (!parent.mixins) {
+        parent.mixins = [];
       }
-      components[0].mixins.push(GlobalMixin);
-    } else {
-      if (!components[components.length - 1].mixins) {
-        components[components.length - 1].mixins = [];
+      parent.mixins.push(GlobalMixin);
+      if (parent.componnets) {
+        const childCmps = parent.components;
+        Object.keys(childCmps).forEach(cmpName => {
+          if (!childCmps[cmpName].mixins) {
+            childCmps[cmpName].mixins = [];
+          }
+          childCmps[cmpName].mixins.push(GlobalMixin);
+        });
       }
-      components[components.length - 1].mixins.push(GlobalMixin);
-    }
+    });
   }
-
   next();
 });
 

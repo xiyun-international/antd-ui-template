@@ -1,6 +1,6 @@
 import Vue from 'vue';
+import '@xiyun/util-style/src/utils.less';
 import './plugins/ant-design-vue';
-import './assets/global.less';
 
 import App from './App.vue';
 import router from './router';
