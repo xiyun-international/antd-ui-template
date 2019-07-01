@@ -31,8 +31,6 @@
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
     "lint-staged": "^8.1.4",
-    "stylelint": "^9.10.1",
-    "stylelint-webpack-plugin": "^0.10.5",
     "vue-template-compiler": "^2.6.9"
   },
   "gitHooks": {
