@@ -14,3 +14,21 @@ export default {
     );
   },
 };
+
+export function handleMixin(components, GlobalMixin) {
+  components.forEach(parent => {
+    if (!parent.mixins) {
+      parent.mixins = [];
+    }
+    parent.mixins.push(GlobalMixin);
+    if (parent.componnets) {
+      const childCmps = parent.components;
+      Object.keys(childCmps).forEach(cmpName => {
+        if (!childCmps[cmpName].mixins) {
+          childCmps[cmpName].mixins = [];
+        }
+        childCmps[cmpName].mixins.push(GlobalMixin);
+      });
+    }
+  });
+}
