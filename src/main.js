@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import '@xiyun/util-style/src/utils.less';
+import '@xiyun/util-style/utils.less';
 import './plugins/ant-design-vue';
 
 import App from './App.vue';

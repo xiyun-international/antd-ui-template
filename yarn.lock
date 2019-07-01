@@ -1322,10 +1322,10 @@
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
 
-"@xiyun/util-style@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/@xiyun/util-style/download/@xiyun/util-style-1.0.0.tgz#3753575eb0271f5ea8f3d6b98c2c26c4c953eece"
-  integrity sha1-N1NXXrAnH16o89a5jCwmxMlT7s4=
+"@xiyun/util-style@^1.1.10":
+  version "1.1.10"
+  resolved "https://registry.npm.taobao.org/@xiyun/util-style/download/@xiyun/util-style-1.1.10.tgz?cache=0&sync_timestamp=1561967765570&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40xiyun%2Futil-style%2Fdownload%2F%40xiyun%2Futil-style-1.1.10.tgz#226fcbdd8a3120ed1dfacf006e79722a34183bd1"
+  integrity sha1-Im/L3YoxIO0d+s8AbnlyKjQYO9E=
 
 "@xiyun/utils@^1.1.7":
   version "1.1.7"
