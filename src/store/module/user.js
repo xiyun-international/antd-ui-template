@@ -1,6 +1,23 @@
+import { post } from '@/utils/http';
+
 export default {
-  state: {},
+  state: {
+    userInfo: {},
+  },
   getters: {},
-  mutations: {},
-  actions: {},
+  mutations: {
+    setUser(state, payload) {
+      state.userInfo = payload;
+    },
+    clearUser(state) {
+      state.userInfo = {};
+    },
+  },
+  actions: {
+    fetchUser(context) {
+      post('/user-info').then(res => {
+        context.commit('setUser', res.data);
+      });
+    },
+  },
 };

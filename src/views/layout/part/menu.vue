@@ -11,7 +11,7 @@
       <template v-if="!('children' in item) || item.children.length === 0">
         <a-menu-item :key="item.index">
           <router-link :to="item.index">
-            <i :class="item.icon"></i>
+            <a-icon :type="item.icon" />
             <span>{{ item.name }}</span>
           </router-link>
         </a-menu-item>
@@ -21,7 +21,7 @@
       <template v-else>
         <a-sub-menu :key="item.index">
           <span slot="title">
-            <i :class="item.icon"></i>
+            <a-icon :type="item.icon" />
             <span>{{ item.name }}</span>
           </span>
           <a-menu-item v-for="children in item.children" :key="children.index">
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import menu from '@/router/menu';
+// import menu from '@/menu';
 
 export default {
   name: 'MenuNav',
@@ -44,7 +44,7 @@ export default {
     return {
       selectedKeys: [],
       openKeys: [],
-      menu,
+      menu: [],
     };
   },
   created() {
@@ -52,6 +52,14 @@ export default {
     const route = path.split('/');
     this.selectedKeys = [path];
     this.openKeys = [`/${route[1]}`];
+    this.fetchMenus();
+  },
+  methods: {
+    fetchMenus() {
+      this.$post('/menus').then(res => {
+        this.menu = res.data;
+      });
+    },
   },
 };
 </script>

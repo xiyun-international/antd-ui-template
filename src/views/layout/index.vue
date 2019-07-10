@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import { setToken } from '@xiyun/utils';
 import XyHeader from './part/header.vue';
 import XyMenu from './part/menu.vue';
@@ -42,11 +43,16 @@ export default {
       // 每次刷新页面或重新进入页面都设置，避免token失效
       setToken(this.$route.query.token);
     }
+    // 请求用户数据，并存储在 vuex 中
+    this.fetchUser();
   },
   computed: {
     isSimpleLayout() {
       return this.mode === 'simple';
     },
+  },
+  methods: {
+    ...mapActions(['fetchUser']),
   },
 };
 </script>

@@ -11,6 +11,7 @@
     "@xiyun/util-style": "^1.1.12",
     "@xiyun/utils": "^1.1.7",
     "ant-design-vue": "^1.2.4",
+    "lottie-web": "^5.5.6",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

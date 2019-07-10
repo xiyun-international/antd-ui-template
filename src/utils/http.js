@@ -11,7 +11,7 @@ message.config({
 http.config({
   baseURL: apiUrl,
   // 如果要使用 qs.stringify 格式化 post 参数，请设为 true
-  isUseQs: false,
+  isUseQs: true,
 });
 
 // 处理业务错误

@@ -5,9 +5,9 @@
     </router-link>
     <div class="right">
       <a-dropdown>
-        <span>欢迎</span>
+        <div><a-icon type="team" /> 欢迎，{{ userInfo.userName }}</div>
         <a-menu slot="overlay">
-          <a-menu-item> <a-icon type="logout" /> 退出登录 </a-menu-item>
+          <a-menu-item @click="logout"> <a-icon type="logout" /> 退出登录 </a-menu-item>
         </a-menu>
       </a-dropdown>
     </div>
@@ -15,8 +15,21 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+import { removeToken } from '@xiyun/utils';
+
 export default {
   name: 'header-nav',
+  computed: mapState({
+    userInfo: state => state.user.userInfo,
+  }),
+  methods: {
+    logout() {
+      removeToken();
+      this.$store.commit('clearUser');
+      this.$router.replace('/login');
+    },
+  },
 };
 </script>
 

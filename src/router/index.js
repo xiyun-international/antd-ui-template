@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import { getToken } from '@xiyun/utils';
 import GlobalMixin, { handleMixin } from '@/utils/global-mixin';
 
 import Login from '@/views/login/index.vue';
@@ -33,6 +34,12 @@ router.beforeEach((to, from, next) => {
   if (process.env.VUE_APP_MODE === 'simple') {
     const components = router.getMatchedComponents(to);
     handleMixin(components, GlobalMixin);
+  }
+
+  if (to.name !== 'login' && process.env.VUE_APP_MODE !== 'simple') {
+    if (!getToken()) {
+      next('login');
+    }
   }
   next();
 });
