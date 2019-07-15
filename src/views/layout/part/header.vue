@@ -33,20 +33,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 40px;
-  padding-left: 44px;
-  color: #fefefe;
-  .logo {
-    display: flex;
-    outline: none;
-    color: white;
-  }
-  .right {
-    font-size: 14px;
-  }
-}
-</style>
+<style lang="less" scoped></style>
