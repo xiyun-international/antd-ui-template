@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link class="logo" to="/">
-      Logo
+      <img src="https://xr.xiyunerp.com/xy-logo.png" class="t-MT6" width="149" height="38" />
     </router-link>
     <div class="right">
       <a-dropdown>
@@ -32,5 +32,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" scoped></style>
