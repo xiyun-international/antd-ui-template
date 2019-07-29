@@ -36,8 +36,6 @@
 </template>
 
 <script>
-// import menu from '@/menu';
-
 export default {
   name: 'MenuNav',
   data() {
@@ -50,7 +48,11 @@ export default {
   created() {
     const { path } = this.$route;
     const route = path.split('/');
-    this.selectedKeys = [path];
+    let curMenu = path;
+    if (route.length >= 3) {
+      curMenu = `/${route[1]}/${route[2]}`;
+    }
+    this.selectedKeys = [curMenu];
     this.openKeys = [`/${route[1]}`];
     this.fetchMenus();
   },
