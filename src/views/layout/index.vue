@@ -4,18 +4,18 @@
       <xy-header />
     </a-layout-header>
     <a-layout>
-      <a-layout-sider width="230" v-if="!isSimpleLayout">
+      <a-layout-sider width="256" v-if="!isSimpleLayout">
         <xy-menu />
       </a-layout-sider>
       <a-layout>
         <a-layout-content class="content">
           <router-view></router-view>
         </a-layout-content>
+        <a-layout-footer v-if="!isSimpleLayout">
+          <xy-footer />
+        </a-layout-footer>
       </a-layout>
     </a-layout>
-    <a-layout-footer v-if="!isSimpleLayout">
-      <xy-footer />
-    </a-layout-footer>
   </a-layout>
 </template>
 

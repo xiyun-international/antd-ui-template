@@ -1,7 +1,8 @@
 <template>
   <a-menu
-    style="padding: 0; width: 100%"
-    :inlineIndent="42"
+    class="menu"
+    theme="dark"
+    :inlineIndent="25"
     mode="inline"
     v-model="selectedKeys"
     :openKeys.sync="openKeys"

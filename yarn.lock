@@ -1303,10 +1303,10 @@
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
 
-"@xiyun/ant-design-ui@^1.2.9":
-  version "1.2.9"
-  resolved "https://registry.npm.taobao.org/@xiyun/ant-design-ui/download/@xiyun/ant-design-ui-1.2.9.tgz#c7c7bd2accff68ec30db04d15e7aba0195eab62c"
-  integrity sha1-x8e9Ksz/aOww2wTRXnq6AZXqtiw=
+"@xiyun/ant-design-ui@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.npmjs.org/@xiyun/ant-design-ui/-/ant-design-ui-1.2.10.tgz#a8514e84734edd26a7efd2216e59155ab7d580e0"
+  integrity sha512-K7E+26RikkKvmo504N/NgGemTZ9kNBeTF89P2gJ+GyeBfOIV/GC7KstXddNM3OpoiIgeicHUGQ3PpVm2UGkcvQ==
   dependencies:
     ant-design-vue "^1.3.8"
 
@@ -1503,8 +1503,8 @@ ant-design-palettes@^1.1.3:
 
 ant-design-vue@^1.2.4, ant-design-vue@^1.3.8:
   version "1.3.10"
-  resolved "https://registry.npm.taobao.org/ant-design-vue/download/ant-design-vue-1.3.10.tgz#82813f90888f77dd0e56c8a71e14efa0f8d8e3da"
-  integrity sha1-goE/kIiPd90OVsinHhTvoPjY49o=
+  resolved "https://registry.npmjs.org/ant-design-vue/-/ant-design-vue-1.3.10.tgz#82813f90888f77dd0e56c8a71e14efa0f8d8e3da"
+  integrity sha512-C+2i0P1DirL+Bc+gpJI9Ys3FXWMza3E8bHD/OpkDnVRV4VegOBuy5eMJsmOzmiGJQM/WQBw8t1v+ma+xIasNXw==
   dependencies:
     "@ant-design/icons" "^1.1.15"
     "@ant-design/icons-vue" "^1.0.1"
@@ -3637,6 +3637,13 @@ eslint-plugin-import@^2.17.3:
     read-pkg-up "^2.0.0"
     resolve "^1.11.0"
 
+eslint-plugin-prettier@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.0.tgz#8695188f95daa93b0dc54b249347ca3b79c4686d"
+  integrity sha512-XWX2yVuwVNLOUhQijAkXz+rMPPoCr7WFiAl8ig6I7Xn+pPVhDhzg4DxHpmbeb0iqjO9UronEA3Tb09ChnFVHHA==
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
+
 eslint-plugin-vue@^4.7.1:
   version "4.7.1"
   resolved "https://registry.npm.taobao.org/eslint-plugin-vue/download/eslint-plugin-vue-4.7.1.tgz#c829b9fc62582c1897b5a0b94afd44ecca511e63"
@@ -4009,6 +4016,11 @@ fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/fast-deep-equal/download/fast-deep-equal-2.0.1.tgz?cache=0&sync_timestamp=1562517919182&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffast-deep-equal%2Fdownload%2Ffast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
+
+fast-diff@^1.1.2:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
+  integrity sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
 
 fast-glob@^2.2.6:
   version "2.2.7"
@@ -7411,6 +7423,13 @@ prepend-http@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/prepend-http/download/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
+
+prettier-linter-helpers@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/prettier-linter-helpers/-/prettier-linter-helpers-1.0.0.tgz#d23d41fe1375646de2d0104d3454a3008802cf7b"
+  integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
+  dependencies:
+    fast-diff "^1.1.2"
 
 prettier@1.16.3:
   version "1.16.3"

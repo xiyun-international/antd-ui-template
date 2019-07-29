@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link class="logo" to="/">
-      <img src="https://xr.xiyunerp.com/xy-logo.png" class="t-MT6" width="149" height="38" />
+      <img src="https://xr.xiyunerp.com/xy-logo.png" class="t-MT12" width="149" height="38" />
     </router-link>
     <div class="right">
       <a-dropdown>
