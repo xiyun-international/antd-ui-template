@@ -5,6 +5,7 @@
     mode="inline"
     v-model="selectedKeys"
     :openKeys.sync="openKeys"
+    @click="handleClick"
   >
     <template v-for="item in menu">
       <!-- 一级菜单 -->
@@ -36,31 +37,65 @@
 </template>
 
 <script>
+import { mapActions, mapState, mapMutations } from 'vuex';
+import { findDefaultActiveMenu } from '@/utils/menu';
+
 export default {
   name: 'MenuNav',
   data() {
     return {
       selectedKeys: [],
       openKeys: [],
-      menu: [],
     };
   },
+  computed: {
+    ...mapState({
+      menu: state => state.menu.menuData,
+    }),
+  },
+  watch: {
+    menu(val) {
+      if (val.length) {
+        const { curMenu } = this.getPath();
+        const activeMenu = findDefaultActiveMenu(curMenu, val);
+        if (activeMenu.isIframe) {
+          this.setIframe({
+            url: activeMenu.url,
+            random: Math.random(),
+          });
+        }
+      }
+    },
+  },
   created() {
-    const { path } = this.$route;
-    const route = path.split('/');
-    let curMenu = path;
-    if (route.length >= 3) {
-      curMenu = `/${route[1]}/${route[2]}`;
-    }
+    const { route, curMenu } = this.getPath();
     this.selectedKeys = [curMenu];
     this.openKeys = [`/${route[1]}`];
-    this.fetchMenus();
+    this.fetchMenu();
   },
   methods: {
-    fetchMenus() {
-      this.$post('/menus').then(res => {
-        this.menu = res.data;
-      });
+    ...mapActions(['fetchMenu']),
+    ...mapMutations(['setIframe']),
+    getPath() {
+      const { path } = this.$route;
+      const route = path.split('/');
+      let curMenu = path;
+      if (route.length >= 3) {
+        curMenu = `/${route[1]}/${route[2]}`;
+      }
+      if (path === '/') {
+        curMenu = '/index';
+      }
+      return { route, curMenu };
+    },
+    handleClick({ key }) {
+      const activeMenu = findDefaultActiveMenu(key, this.menu);
+      if (activeMenu.isIframe) {
+        this.setIframe({
+          url: activeMenu.url,
+          random: Math.random(),
+        });
+      }
     },
   },
 };

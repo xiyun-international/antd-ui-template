@@ -27,6 +27,7 @@ export default {
     logout() {
       removeToken();
       this.$store.commit('clearUser');
+      this.$store.commit('clearMenu');
       this.$router.replace('/login');
     },
   },

@@ -3,7 +3,7 @@
 
 ### 简介
 
-antd-ui-template是一个基于ant-design-vue组件库快速创建的xy框架模板
+antd-ui-template 是一个基于 ant-design-vue 组件库快速创建的框架模板
 
 ### 使用
 
@@ -19,14 +19,7 @@ $ yarn run build
 或
 $ npm run build
 
-代码格式检查
-$ yarn run lint
-或
-$ npm run lint
-
 ```
-
-
 
 ### 项目目录结构
 
@@ -82,6 +75,11 @@ $ npm run lint
   },
 ]
 ```
+
+### 外部 iframe 
+我们为外部 iframe 提供了一个 demo 页面，如果你需要此类业务，你可以在
+`views/iframe`下查看。
+
 
 ### git commit message 规范
 
