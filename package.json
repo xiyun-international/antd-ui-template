@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "lt": "bash scripts/release.sh && vue-cli-service build --mode staging",
     "start": "vue-cli-service serve --open --copy --fix",
     "build": "yarn lint && vue-cli-service build",
     "lint": "vue-cli-service lint --mode production"
