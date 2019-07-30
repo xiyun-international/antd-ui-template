@@ -1303,10 +1303,10 @@
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
 
-"@xiyun/ant-design-ui@^1.2.10":
-  version "1.2.10"
-  resolved "https://registry.npmjs.org/@xiyun/ant-design-ui/-/ant-design-ui-1.2.10.tgz#a8514e84734edd26a7efd2216e59155ab7d580e0"
-  integrity sha512-K7E+26RikkKvmo504N/NgGemTZ9kNBeTF89P2gJ+GyeBfOIV/GC7KstXddNM3OpoiIgeicHUGQ3PpVm2UGkcvQ==
+"@xiyun/ant-design-ui@^1.2.15":
+  version "1.2.15"
+  resolved "https://registry.npmjs.org/@xiyun/ant-design-ui/-/ant-design-ui-1.2.15.tgz#500643e1c4c421da145bd5203817ee838c4cffb6"
+  integrity sha512-4Gjv4G0h+U4y5VhVDSrVW2kC0aSlcooYiIP1OZM4mCv4nSTdKR18eHooMfL0MXxzqVm07lILZB25U2Ijjy3iNg==
   dependencies:
     ant-design-vue "^1.3.8"
 
