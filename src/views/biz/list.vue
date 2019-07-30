@@ -6,7 +6,7 @@
     :tag-status="5"
   >
     <div slot="right">
-      <a-button type="primary">打印账单</a-button>
+      <a-button type="primary">打印</a-button>
     </div>
 
     <a-row>
@@ -22,8 +22,8 @@
         :dataSource="List"
         :pagination="true"
       >
-        <template slot="action" slot-scope="_, record">
-          <router-link :to="`/supplier/detail/${record.id}`">
+        <template slot="action">
+          <router-link to="/biz/detail">
             查看
           </router-link>
         </template>
@@ -83,7 +83,7 @@ export default {
      *  获取列表页数据
      */
     getList(params = {}) {
-      this.post('/list', params).then(() => {
+      this.$post('/list', params).then(() => {
         this.$message({
           type: 'success',
         });
