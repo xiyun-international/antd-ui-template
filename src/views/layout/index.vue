@@ -59,7 +59,6 @@ export default {
 
 <style lang="less" scoped>
 .content {
-  padding: 0;
   background: #edf0f4;
 }
 </style>
