@@ -1,18 +1,73 @@
 <template>
   <xy-context :breadcrumb="[{ name: '用户管理', path: '' }, { name: '新增用户' }]" title="新增用户">
-    <xy-title title="基础信息" size="normal" style="margin-top: unset;"></xy-title>
+    <xy-title style="margin-top: unset;">基础信息</xy-title>
     <a-form :form="form" @submit="onSubmit">
-      <a-form-item v-bind="middleLayout">
+      <a-form-item v-bind="middleLayout" label="用户名">
         <a-input
           v-decorator="[
-            'name',
+            'username',
             {
-              rules: [{ required: true, message: '请填写姓名' }],
+              rules: [{ required: true, message: '请填写用户名' }],
             },
           ]"
-          placeholder="请填写姓名"
+          placeholder="请填写用户名"
           :maxLength="20"
         />
+      </a-form-item>
+      <a-form-item v-bind="middleLayout" label="E-mail">
+        <a-input
+          v-decorator="[
+            'email',
+            {
+              rules: [
+                {
+                  type: 'email',
+                  message: 'E-mail 不对',
+                },
+                {
+                  required: true,
+                  message: '请输入 E-mail!',
+                },
+              ],
+            },
+          ]"
+          placeholder="请填写 E-mail"
+        />
+      </a-form-item>
+      <a-form-item v-bind="middleLayout" label="密码">
+        <a-input
+          v-decorator="[
+            'password',
+            {
+              rules: [
+                {
+                  required: true,
+                  message: '请填写密码',
+                },
+              ],
+            },
+          ]"
+          type="password"
+          placeholder="请填写密码"
+        />
+      </a-form-item>
+      <a-form-item v-bind="middleLayout" label="性别">
+        <a-radio-group
+          v-decorator="[
+            'gender',
+            {
+              rules: [
+                {
+                  required: true,
+                },
+              ],
+              initialValue: 1,
+            },
+          ]"
+        >
+          <a-radio :value="1">男</a-radio>
+          <a-radio :value="2">女</a-radio>
+        </a-radio-group>
       </a-form-item>
       <a-form-item v-bind="buttonLayout">
         <a-button type="primary" htmlType="submit">
@@ -46,8 +101,8 @@ export default {
           return;
         }
         this.$post('/create', values).then(() => {
-          this.$message.success('创建成果');
-          this.$router.replace('/other/list');
+          this.$message.success('创建成功');
+          this.$router.replace('/biz/list');
         });
       });
     },
