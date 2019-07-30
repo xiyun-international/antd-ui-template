@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'p1',
+  name: 'listDemo',
 };
 </script>
 

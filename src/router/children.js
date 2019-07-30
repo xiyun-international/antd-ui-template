@@ -1,5 +1,5 @@
 import main from './routes/main';
-import other from './routes/other';
+import biz from './routes/biz';
 import iframe from './routes/iframe';
 
-export default [...main, ...other, ...iframe];
+export default [...main, ...biz, ...iframe];

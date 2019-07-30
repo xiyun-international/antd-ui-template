@@ -1,10 +1,10 @@
 <template>
-  <div>示例页面2</div>
+  <div>详情页面</div>
 </template>
 
 <script>
 export default {
-  name: 'p2',
+  name: 'detailDemo',
 };
 </script>
 

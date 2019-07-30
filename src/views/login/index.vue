@@ -229,11 +229,11 @@ export default {
         this.$message.error('请输入您的密码');
         return;
       }
-      this.$post('/v1/user/login', {
+      this.$post('/login', {
         username: this.username,
         password: this.password,
       }).then(res => {
-        setToken(res.resultObject);
+        setToken(res.data.token);
         this.$router.replace('/');
       });
     },
