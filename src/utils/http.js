@@ -16,6 +16,10 @@ http.config({
 
 // 处理业务错误
 http.bizErrorHandler(res => {
+  if (res.layers) {
+    // 请求动画JSON
+    return res;
+  }
   // 示例
   const { code, msg } = res;
   switch (code) {
