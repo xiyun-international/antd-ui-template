@@ -90,11 +90,11 @@ export default {
   },
   methods: {
     getDetail() {
-      this.$post('/detail').then(() => {
-        this.$message({
-          type: 'success',
-        });
-      });
+      // this.$post('/detail').then(() => {
+      //   this.$message({
+      //     type: 'success',
+      //   });
+      // });
     },
   },
 };

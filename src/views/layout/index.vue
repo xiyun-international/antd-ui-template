@@ -5,7 +5,7 @@
     </a-layout-header>
     <a-layout>
       <a-layout-sider width="256" v-if="!isSimpleLayout">
-        <xy-menu />
+        <xy-menu :menu-data="menu" :set-iframe="setIframe" />
       </a-layout-sider>
       <a-layout>
         <a-layout-content class="content">
@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapState, mapMutations } from 'vuex';
 import { setToken } from '@xiyun/utils';
 import XyHeader from './part/header.vue';
-import XyMenu from './part/menu.vue';
+import XyMenu from '@/components/menu.vue';
 import XyFooter from './part/footer.vue';
 
 export default {
@@ -42,6 +42,8 @@ export default {
     if (this.isSimpleLayout) {
       // 每次刷新页面或重新进入页面都设置，避免token失效
       setToken(this.$route.query.token);
+    } else {
+      this.fetchMenu();
     }
     // 请求用户数据，并存储在 vuex 中
     this.fetchUser();
@@ -50,9 +52,14 @@ export default {
     isSimpleLayout() {
       return this.mode === 'simple';
     },
+    ...mapState({
+      menu: state => state.menu.menuData,
+    }),
   },
   methods: {
+    ...mapActions(['fetchMenu']),
     ...mapActions(['fetchUser']),
+    ...mapMutations(['setIframe']),
   },
 };
 </script>
