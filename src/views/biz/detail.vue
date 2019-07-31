@@ -60,6 +60,11 @@ export default {
   name: 'deliver-detail',
   data() {
     return {
+      breadcrumb: [
+        { name: '用户管理' },
+        { name: '用户列表', path: '/biz/list' },
+        { name: '用户详情' },
+      ],
       form: {
         apply_name: '胡强强',
         shop_name: '商户',
@@ -72,10 +77,10 @@ export default {
       },
       searchItem: {
         labelCol: {
-          span: 4,
+          span: 6,
         },
         wrapperCol: {
-          span: 20,
+          span: 18,
         },
       },
     };

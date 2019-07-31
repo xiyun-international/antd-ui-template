@@ -1,13 +1,13 @@
 <template>
   <a-form class="search" :form="form" @submit="handleSearch">
-    <a-row>
+    <a-row :gutter="20">
       <a-col v-bind="searchCol">
-        <a-form-item label="单号：" v-bind="searchItem">
-          <a-input v-decorator="['deliverId']" placeholder="请输入" />
+        <a-form-item label="订单号" v-bind="searchItem">
+          <a-input v-decorator="['deliverId']" placeholder="请输入订单号" />
         </a-form-item>
       </a-col>
       <a-col v-bind="searchCol">
-        <a-form-item label="时间" v-bind="searchItem">
+        <a-form-item label="寄件时间" v-bind="searchItem">
           <a-date-picker
             v-decorator="['time']"
             placeholder="请选择寄件时间"
@@ -19,6 +19,8 @@
         <a-form-item label="发货状态" v-bind="searchItem">
           <a-select v-decorator="['status']" placeholder="请选择">
             <a-select-option value="">全部</a-select-option>
+            <a-select-option :value="1">未发货</a-select-option>
+            <a-select-option :value="2">已发货</a-select-option>
           </a-select>
         </a-form-item>
       </a-col>
@@ -45,10 +47,10 @@ export default {
       },
       searchItem: {
         labelCol: {
-          span: 4,
+          span: 6,
         },
         wrapperCol: {
-          span: 20,
+          span: 18,
         },
       },
     };
