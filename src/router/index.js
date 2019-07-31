@@ -3,22 +3,22 @@ import VueRouter from 'vue-router';
 import { getToken } from '@xiyun/utils';
 import GlobalMixin, { handleMixin } from '@/utils/global-mixin';
 
-// import Login from '@/views/login/index.vue';
+import Login from '@/views/login/index.vue';
 import Layout from '@/views/layout/index.vue';
 import children from './children';
 
 Vue.use(VueRouter);
 
 const routes = [
-  // {
-  //   path: '*',
-  //   component: Login,
-  // },
-  // {
-  //   path: '/login',
-  //   name: 'login',
-  //   component: Login,
-  // },
+  {
+    path: '*',
+    component: Login,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+  },
   {
     path: '/',
     component: Layout,
