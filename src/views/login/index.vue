@@ -28,14 +28,14 @@ export default {
   data() {
     return {
       animationConfig: {},
-      redirectPathAfterLogin: '/home/index',
+      redirectPathAfterLogin: '/index',
     };
   },
 
   computed: {
     apiConfig() {
       return {
-        login: '/api/v1/member/login',
+        login: '/login',
         getCode: 'api',
         verifyCode: '/api/v1/verification/checkVerCodeForPwd',
         updatePassword: '/api/v1/verification/changePwd',

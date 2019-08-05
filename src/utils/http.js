@@ -1,8 +1,9 @@
 import { http, removeToken } from '@xiyun/utils';
 import { message } from 'ant-design-vue';
-import Router from '@/router/index';
+import VueRouter from 'vue-router';
 
 const apiUrl = process.env.VUE_APP_API;
+const Router = new VueRouter();
 
 message.config({
   maxCount: 1,

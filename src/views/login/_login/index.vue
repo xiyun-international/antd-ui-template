@@ -192,7 +192,6 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
 import { setToken, validMobile } from '@xiyun/utils';
 import { XyCountdownButton } from '@xiyun/ant-design-ui';
 import Lottie from './lottie.vue';
@@ -285,10 +284,6 @@ export default {
   methods: {
     validMobile,
 
-    ...mapMutations({
-      clearIframeUrl: 'iframeSrc/clearIframeUrl',
-    }),
-
     /**
      * 登录
      */
@@ -305,8 +300,7 @@ export default {
         username: this.username,
         password: this.password,
       }).then(res => {
-        setToken(res.resultObject);
-        this.clearIframeUrl();
+        setToken(res.data.token);
         this.$router.replace(this.redirectPathAfterLogin);
       });
     },
