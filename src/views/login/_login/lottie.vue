@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import lottie from 'lottie-web';
-
 export default {
   props: {
     options: {
@@ -24,7 +22,8 @@ export default {
     };
   },
 
-  mounted() {
+  async mounted() {
+    const lottie = await import(/* webpackChunkName: "lottie" */ 'lottie-web');
     this.anim = lottie.loadAnimation({
       container: this.$refs.lavContainer,
       renderer: 'svg',
