@@ -265,7 +265,7 @@ export default {
     animeStyle() {
       return {
         'margin-top': `${this.animationConfig.position.top}px`,
-        'margin-left': `${this.animationConfig.position.left}px`,
+        'margin-left': `${this.animationConfig.position.left}%`,
       };
     },
 
