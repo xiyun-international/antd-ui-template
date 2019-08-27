@@ -56,6 +56,10 @@
 </template>
 
 <script>
+/**
+ * 详情页路由
+ * @route('biz/detail')
+ */
 export default {
   name: 'deliver-detail',
   data() {

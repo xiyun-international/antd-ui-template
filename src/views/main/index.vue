@@ -5,6 +5,10 @@
 </template>
 
 <script>
+/**
+ * 首页路由
+ * @route('index', '')
+ */
 export default {
   name: 'mainPage',
 };

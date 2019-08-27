@@ -5,6 +5,10 @@
 <script>
 import { getToken } from '@xiyun/utils';
 
+/**
+ * 外部页面路由
+ * @route('iframe/*')
+ */
 export default {
   name: 'iframeDemo',
   data() {

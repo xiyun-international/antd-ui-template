@@ -3,22 +3,21 @@
 
 ### 简介
 
-antd-ui-template 是一个基于 ant-design-vue 组件库快速创建的框架模板
+antd-ui-template 是一个基于 vue-cli3 和 ant-design-vue 组件库搭建的一套适用于中后台项目的框架模板。
+
+### 特点
+* 无需再做额外的底层配置，开箱即用
+* 已内置基于 axios 封装好的 http 请求方法，禧云业务级 UI 组件
+* 节省从零搭建一个项目框架的时间成本
 
 ### 使用
 
 ```shell
-
 启动项目
-$ yarn run start
-或
-$ npm run start
+$ yarn start
 
 打包项目
-$ yarn run build
-或
-$ npm run build
-
+$ yarn build
 ```
 
 ### 项目目录结构
@@ -39,7 +38,7 @@ $ npm run build
 ```
 
 ### 菜单结构
-菜单推荐通过接口获取，目前我们使用了 mock 数据来模拟，菜单结构如下：
+菜单推荐通过接口获取，目前我们使用了 mock 数据来模拟，菜单结构示例如下：
 ```js
 [
   {
@@ -75,6 +74,17 @@ $ npm run build
   },
 ]
 ```
+
+### 路由配置
+
+框架集成了[`@xiyun/vue-route-webpack-plugin`][1]（路由扫描 webpack 插件），只要在页面级文件中写了路由配置，插件就会扫描到并生成路由文件：
+```js
+/**
+ * 商品列表页路由
+ * @route('biz/list')
+ */
+```
+框架示例页面中已配置好路由，请参看各页面
 
 ### 外部 iframe 
 我们为外部 iframe 提供了一个 demo 页面，如果你需要此类业务，你可以在
@@ -118,3 +128,5 @@ $ npm run build
   }
 }
 ```
+
+[1]: https://github.com/xiyun-international/vue-route-webpack-plugin
