@@ -52,7 +52,7 @@ export default {
       },
       position: {
         top: 0,
-        left: 30,
+        left: 13,
       },
       followPlayingSegments: [100, 200],
     };

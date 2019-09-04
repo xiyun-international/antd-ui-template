@@ -20,6 +20,10 @@
 <script>
 import SearchForm from './form/search.vue';
 
+/**
+ * 商品列表页路由
+ * @route('biz/list')
+ */
 export default {
   name: 'listDemo',
   data() {

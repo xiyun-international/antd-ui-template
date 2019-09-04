@@ -79,6 +79,10 @@
 </template>
 
 <script>
+/**
+ * 创建页路由
+ * @route('biz/create')
+ */
 export default {
   name: 'createDemo',
   data() {
