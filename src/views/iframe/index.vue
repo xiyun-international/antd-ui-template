@@ -5,6 +5,10 @@
 <script>
 import { getToken } from '@xiyun/utils';
 
+/**
+ * 外部页面路由
+ * @route('iframe/*')
+ */
 export default {
   name: 'iframeDemo',
   data() {
@@ -31,8 +35,10 @@ export default {
   methods: {
     setFrameUrl(url) {
       const token = getToken();
+      const { origin } = window.location;
+      const separator = url.indexOf('?') === -1 ? '?' : '&';
       if (url) {
-        this.url = `${url}?token=${token}&frame_id=${Math.random()}`;
+        this.url = `${url}${separator}token=${token}&frame_id=${Math.random()}&origin=${origin}`;
       } else {
         this.$message.error('应用地址解析错误');
       }
