@@ -90,6 +90,15 @@ $ yarn build
 我们为外部 iframe 提供了一个 demo 页面，如果你需要此类业务，你可以在
 `views/iframe`下查看。
 
+### 本地 mock 接口
+mock 接口文件存放在 `__mock__` 目录下，使用禧云 mock 工具可以启动 mock 服务：
+```
+// 如果没有安装过 mock 插件，需要安装一下
+$ xy add @xiyun/xy-plugin-mock
+// 启动 mock 服务
+$ xy mock
+```
+
 
 ### git commit message 规范
 

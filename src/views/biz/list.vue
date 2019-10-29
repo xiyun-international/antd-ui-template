@@ -63,7 +63,7 @@ export default {
     // 获取列表页数据
     getList(params = {}) {
       this.$post('/list', params).then(res => {
-        this.listData = res.data.list;
+        this.listData = res.data;
       });
     },
 

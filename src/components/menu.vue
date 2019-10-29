@@ -10,7 +10,7 @@
   >
     <template v-for="item in menuData">
       <!-- 一级菜单 -->
-      <template v-if="!('children' in item) || item.children.length === 0">
+      <template v-if="('children' in item && item.children.length === 0) || !('children' in item)">
         <a-menu-item :key="item.index">
           <router-link :to="item.index">
             <a-icon :type="item.icon" />
