@@ -4,4 +4,11 @@ module.exports = {
   configureWebpack: {
     plugins: [new VueRouteWebpackPlugin()],
   },
+  css: {
+    loaderOptions: {
+      less: {
+        javascriptEnabled: true,
+      },
+    },
+  },
 };

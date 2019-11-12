@@ -1,6 +1,6 @@
 <template>
   <xy-context :breadcrumb="breadcrumb" title="商品列表">
-    <search-form @onSearch="onSearch"></search-form>
+    <search-form ref="search" @onSearch="onSearch"></search-form>
     <a-table
       class="t-MT24"
       :rowKey="record => record.id"
@@ -56,24 +56,28 @@ export default {
   components: {
     SearchForm,
   },
-  created() {
+  mounted() {
     this.getList();
   },
   methods: {
     // 获取列表页数据
-    getList(params = {}) {
-      this.$post('/list', params).then(res => {
+    getList(currentPage, pageSize = 20) {
+      const formData = this.$refs.search.form.getFieldsValue();
+      if (formData.time) {
+        formData.time = formData.time.format('YYYY-MM-DD');
+      }
+      this.$post('/list', {
+        ...formData,
+        currentPage,
+        pageSize,
+      }).then(res => {
         this.listData = res.data;
       });
     },
 
-    onSearch(form) {
-      this.searchForm = form;
-      this.getList({
-        ...this.searchForm,
-        page: 1,
-        pageSize: 10,
-      });
+    // 搜索
+    onSearch() {
+      this.getList(1);
     },
   },
 };

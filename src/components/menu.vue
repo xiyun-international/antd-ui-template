@@ -10,7 +10,7 @@
   >
     <template v-for="item in menuData">
       <!-- 一级菜单 -->
-      <template v-if="('children' in item && item.children.length === 0) || !('children' in item)">
+      <template v-if="checkFirstMenu(item)">
         <a-menu-item :key="item.index">
           <router-link :to="item.index">
             <a-icon :type="item.icon" />
@@ -41,9 +41,9 @@
 // 找到默认选中的菜单数据
 function findActiveMenu(path, menus, res = '') {
   menus.forEach(item => {
-    if (item.index === path && item.children.length === 0) {
+    if (path.indexOf(item.index) !== -1) {
       res = item;
-    } else if (item.children.length > 0) {
+    } else if ('children' in item && item.children.length > 0) {
       res = findActiveMenu(path, item.children, res);
     }
   });
@@ -75,8 +75,10 @@ export default {
   watch: {
     menuData(val) {
       if (val.length) {
-        const { curMenu } = this.getPath();
-        const activeMenu = findActiveMenu(curMenu, val);
+        const { path } = this.$route;
+        this.selectedKeys = [path];
+        const activeMenu = findActiveMenu(path, val);
+        this.openKeys = [activeMenu.index];
         if (activeMenu.isIframe) {
           this.setIframe({
             url: activeMenu.url,
@@ -86,23 +88,9 @@ export default {
       }
     },
   },
-  created() {
-    const { route, curMenu } = this.getPath();
-    this.selectedKeys = [curMenu];
-    this.openKeys = [`/${route[1]}`];
-  },
   methods: {
-    getPath() {
-      const { path } = this.$route;
-      const route = path.split('/');
-      let curMenu = path;
-      if (route.length >= 3) {
-        curMenu = `/${route[1]}/${route[2]}`;
-      }
-      if (path === '/') {
-        curMenu = '/index';
-      }
-      return { route, curMenu };
+    checkFirstMenu(item) {
+      return ('children' in item && item.children.length === 0) || !('children' in item);
     },
     handleClick({ key }) {
       const activeMenu = findActiveMenu(key, this.menuData);
