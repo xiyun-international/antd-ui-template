@@ -6,7 +6,8 @@
       :rowKey="record => record.id"
       :columns="columns"
       :dataSource="listData"
-      :pagination="true"
+      :pagination="pagination"
+      @change="handleTableChange"
     >
       <template slot="action">
         <router-link to="/biz/detail">
@@ -51,6 +52,11 @@ export default {
         },
       ],
       listData: [],
+      pagination: {
+        current: 1,
+        pageSize: 20,
+        total: 0,
+      },
     };
   },
   components: {
@@ -61,23 +67,34 @@ export default {
   },
   methods: {
     // 获取列表页数据
-    getList(currentPage, pageSize = 20) {
+    getList() {
       const formData = this.$refs.search.form.getFieldsValue();
       if (formData.time) {
         formData.time = formData.time.format('YYYY-MM-DD');
       }
       this.$post('/list', {
         ...formData,
-        currentPage,
-        pageSize,
+        current: this.pagination.current,
+        pageSize: this.pagination.pageSize,
       }).then(res => {
         this.listData = res.data;
+        this.pagination.total = res.data.total;
       });
     },
 
     // 搜索
     onSearch() {
-      this.getList(1);
+      this.pagination.current = 1;
+      this.getList();
+    },
+
+    // 翻页等
+    handleTableChange(pagination) {
+      const pager = { ...this.pagination };
+      pager.current = pagination.current;
+      pager.pageSize = pagination.pageSize;
+      this.pagination = pager;
+      this.getList();
     },
   },
 };
