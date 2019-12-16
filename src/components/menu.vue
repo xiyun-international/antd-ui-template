@@ -41,7 +41,7 @@
 // 找到默认选中的菜单数据
 function findActiveMenu(path, menus, res = '') {
   menus.forEach(item => {
-    if (path.indexOf(item.index) !== -1) {
+    if (path.indexOf(item.index) !== -1 && item.children.length === 0) {
       res = item;
     } else if ('children' in item && item.children.length > 0) {
       res = findActiveMenu(path, item.children, res);
