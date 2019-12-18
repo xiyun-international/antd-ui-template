@@ -31,5 +31,8 @@ export default {
     });
     this.$emit('animCreated', this.anim);
   },
+  destroyed() {
+    this.anim.destroy();
+  },
 };
 </script>
