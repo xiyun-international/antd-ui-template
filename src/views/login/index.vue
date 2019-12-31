@@ -43,11 +43,9 @@ export default {
     },
   },
   async created() {
-    const animationRes = await get(`${window.location.href.split('#')[0]}login-animation.json`);
-
     this.animationConfig = {
       basicOptions: {
-        animationData: animationRes,
+        animationData: require('@/assets/login-animation.json'),
         loop: false,
       },
       position: {

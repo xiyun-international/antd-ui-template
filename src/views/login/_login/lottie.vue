@@ -22,9 +22,8 @@ export default {
     };
   },
 
-  async mounted() {
-    const lottie = await import(/* webpackChunkName: "lottie" */ 'lottie-web');
-    this.anim = lottie.loadAnimation({
+  mounted() {
+    this.anim = window.lottie.loadAnimation({
       container: this.$refs.lavContainer,
       renderer: 'svg',
       ...this.options,
