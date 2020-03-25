@@ -116,25 +116,12 @@ $ xy mock
 - chore: 改变构建流程、或者增加依赖库、工具等
 - revert: 回滚到上一个版本
 
-如果你不需要这个规范，可以在 `package.json` 中删除掉以下内容：
+如果你不需要这个规范，可以在 `package.json` 中删除掉 commit-msg 的配置：
 ```json
 {
   "gitHooks": {
-    "pre-commit": "lint-staged",
     "commit-msg": "commitlint -E GIT_PARAMS"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "vue-cli-service lint --mode production",
-      "git add"
-    ],
-    "*.vue": [
-      "prettier --write",
-      "vue-cli-service lint --mode production",
-      "git add"
-    ]
-  }
 }
 ```
 

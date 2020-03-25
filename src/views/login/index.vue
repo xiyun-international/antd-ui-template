@@ -17,8 +17,9 @@
 </template>
 
 <script>
-import { get } from '@/utils/http';
 import Login from './_login/index.vue';
+
+const animationData = require('@/views/assets/login-animation.json');
 
 export default {
   components: {
@@ -45,7 +46,7 @@ export default {
   async created() {
     this.animationConfig = {
       basicOptions: {
-        animationData: require('@/assets/login-animation.json'),
+        animationData,
         loop: false,
       },
       position: {
