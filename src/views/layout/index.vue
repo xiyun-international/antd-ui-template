@@ -22,8 +22,8 @@
 <script>
 import { mapActions, mapState, mapMutations } from 'vuex';
 import { setToken } from '@xiyun/utils';
-import XyHeader from './part/header.vue';
 import XyMenu from '@/components/menu.vue';
+import XyHeader from './part/header.vue';
 import XyFooter from './part/footer.vue';
 
 export default {
